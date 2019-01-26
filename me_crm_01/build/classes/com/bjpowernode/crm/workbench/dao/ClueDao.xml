@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ClueDao">
+
+	<delete id="deleteClueById2">
+		delete from tbl_clue where id = #{id}
+	</delete>
+	
+	<insert id="saveClue" parameterType="Clue">
+		insert into tbl_clue 
+			(id,owner,company,appellation,name,position,email,
+			telephone,web,phone,clueState,clueFrom,clueDesc,relationSummary,
+			relationTimeNext,address,creatBy,creatTime)
+		values
+			(#{id},#{owner},#{company},#{appellation},#{name},
+			#{position},#{email},#{telephone},#{web},#{phone},
+			#{clueState},#{clueFrom},#{clueDesc},#{relationSummary},
+			#{relationTimeNext},#{address},#{creatBy},#{creatTime})
+	</insert>
+	
+	<select id="display" resultType="Clue" parameterType="map">
+		select c.id,c.name,c.appellation,c.company,c.telephone,c.phone,c.clueFrom,u.name as owner,c.clueState 
+		from tbl_clue c
+		join tbl_user u
+		on c.owner = u.id
+		<where>
+			<if test="name != null and name != ''">
+				and c.name like '%' #{name} '%'
+			</if>
+			<if test="company != null and company != ''">
+				and c.company like '%' #{company} '%'
+			</if>
+			<if test="telephone != null and telephone != ''">
+				and c.telephone like '%' #{telephone} '%'
+			</if>
+			<if test="source != null and source != ''">
+				and c.source like '%' #{source} '%'
+			</if>
+			<if test="owner != null and owner != ''">
+				and c.owner like '%' #{owner} '%'
+			</if>
+			<if test="phone != null and phone != ''">
+				and c.phone like '%' #{phone} '%'
+			</if>
+			<if test="clueState != null and clueState != ''">
+				and c.clueState like '%' #{clueState} '%'
+			</if>
+		</where>
+		order by clueState asc
+		limit #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getTotal" resultType="int" parameterType="map">
+		select count(*) 
+		from tbl_clue
+		<where>
+			<if test="name != null and name != ''">
+				and name like '%' #{name} '%'
+			</if>
+			<if test="company != null and company != ''">
+				and company like '%' #{company} '%'
+			</if>
+			<if test="telephone != null and telephone != ''">
+				and telephone like '%' #{telephone} '%'
+			</if>
+			<if test="source != null and source != ''">
+				and source like '%' #{source} '%'
+			</if>
+			<if test="owner != null and owner != ''">
+				and owner like '%' #{owner} '%'
+			</if>
+			<if test="phone != null and phone != ''">
+				and phone like '%' #{phone} '%'
+			</if>
+			<if test="clueState != null and clueState != ''">
+				and clueState like '%' #{clueState} '%'
+			</if>
+		</where>
+	</select>
+	
+	<select id="getClueById" resultType="Clue">
+		select c.id,u.name as owner,c.company,c.appellation,c.name,c.position,
+		c.email,c.telephone,c.web,c.phone,c.clueState,c.clueFrom,
+		c.clueDesc,c.relationSummary,c.relationTimeNext,c.address,
+		c.creatBy,c.creatTime,c.editBy,c.editTime 
+		from tbl_clue c
+		join tbl_user u
+		on c.owner = u.id
+		where c.id= #{id}
+	</select>
+	
+	<select id="getAllClue" resultType="Clue">
+		select * from tbl_clue
+	</select>
+	
+	<select id="getClueById3" resultType="Clue">
+		select * from tbl_clue where id = #{id}
+	</select>
+	
+	<update id="updateClueById" parameterType="Clue">
+		update tbl_clue set 
+		owner = #{owner},company= #{company},appellation = #{appellation},name = #{name},position = #{position},
+		email = #{email},telephone = #{telephone},web = #{web},phone = #{phone},clueState = #{clueState},
+		clueFrom = #{clueFrom},clueDesc= #{clueDesc},relationSummary = #{relationSummary},
+		relationTimeNext = #{relationTimeNext},address = #{address},editBy = #{editBy},editTime = #{editTime}
+		where id = #{id} 
+	</update>
+	
+	<delete id="deleteClueById">
+		delete from tbl_clue where id in(
+		<foreach collection="array" separator="," item="id">
+			#{id}
+		</foreach>
+		)
+	</delete>
+	
+	<insert id="saves" parameterType="Clue">
+		insert into tbl_clue
+			(id,owner,company,appellation,name,position,email,
+			telephone,web,phone,clueState,clueFrom,clueDesc,relationSummary,
+			relationTimeNext,address,creatBy,creatTime)
+		values
+			<foreach collection="list" item="c" separator=",">
+			(#{c.id},#{c.owner},#{c.company},#{c.appellation},#{c.name},
+			#{c.position},#{c.email},#{c.telephone},#{c.web},#{c.phone},
+			#{c.clueState},#{c.clueFrom},#{c.clueDesc},#{c.relationSummary},
+			#{c.relationTimeNext},#{c.address},#{c.creatBy},#{c.creatTime})			
+			</foreach>
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

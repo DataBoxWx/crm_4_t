@@ -1,0 +1,26 @@
+<classpath>
+  <container id="09-receiveParameters-property!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/就业班(第五阶段)/project/springmvc/09-receiveParameters-property/WebContent/WEB-INF/lib/spring-webmvc-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-webmvc-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+  <container id="springMvc-02!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/就业班（第四阶段）/eclipse_practice4/workspace_teacher/springMvc-02/WebContent/WEB-INF/lib/spring-webmvc-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-webmvc-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="E:/就业班（第四阶段）/eclipse_practice4/workspace_teacher/springMvc-02/WebContent/WEB-INF/lib/spring-core-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-core-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="E:/就业班（第四阶段）/eclipse_practice4/workspace_teacher/springMvc-02/WebContent/WEB-INF/lib/spring-web-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-web-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+  <container id="ssm-01!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/就业班（第四阶段）/eclipse_practice4/workspace_teacher/ssm-01/WebContent/WEB-INF/lib/spring-webmvc-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-webmvc-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="E:/就业班（第四阶段）/eclipse_practice4/workspace_teacher/ssm-01/WebContent/WEB-INF/lib/spring-web-4.3.9.RELEASE.jar">
+      <source-attachment-path>E:/就业班(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/libs/spring-web-4.3.9.RELEASE-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

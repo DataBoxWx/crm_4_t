@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.TransactionHistoryDao">
+	<select id="getDistory" resultType="TransactionHistory">
+		select * 
+		from 
+			tbl_transaction_history 
+		where
+			transactionId = #{transactionId}
+		order by 
+			creatTime desc
+	</select>
+	
+	<select id="getTransactionHistory" resultType="TransactionHistory">
+		select * 
+		from
+			tbl_transaction_history
+		where
+			transactionId = #{transactionId}
+		order by 
+			creatTime desc
+		limit 0,1
+	</select>
+	
+	<insert id="save" parameterType="TransactionHistory">
+	insert into tbl_transaction_history
+		(id,stage,money,expectedTime,creatTime,creatBy,transactionId)
+	values
+		(#{id},#{stage},#{money},#{expectedTime},#{creatTime},#{creatBy},#{transactionId})
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

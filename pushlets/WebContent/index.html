@@ -1,0 +1,21 @@
+<html>
+<head>
+<base href="http://localhost:8080/pushlets/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<script type="text/javascript" src="ajax-pushlet-client.js"></script>
+<script type="text/javascript" src="jquery-1.11.1-min.js"></script>
+
+<script type="text/javascript">
+	PL._init();
+	PL.joinListen('/cuige/he');
+	function onData(event) {
+		//alert(event.get("mess"));
+		$("#tipMsg").append(event.get("mess") + "<br/>");
+	}
+</script>
+</head>
+<body>
+	<span id="tipMsg" style="color: red;font-size: 12px;"></span>
+</body>
+</html>

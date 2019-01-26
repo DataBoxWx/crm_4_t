@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ActivityRemarkDao">
+
+	<select id="getByActivityId" resultType="ActivityRemark">
+		select * from tbl_activity_remark where activityId = #{activityId} order by createTime asc
+	</select>
+	
+	<insert id="save" parameterType="ActivityRemark">
+		insert into tbl_activity_remark values(#{id},#{noteContent},#{createTime},#{createBy},#{editTime},#{editBy},#{editFlag},#{activityId})
+	</insert>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

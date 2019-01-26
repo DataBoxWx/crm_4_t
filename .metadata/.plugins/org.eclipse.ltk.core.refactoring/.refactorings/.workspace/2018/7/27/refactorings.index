@@ -1,0 +1,6 @@
+1530789936579	Delete resource 'dubboProvider-01'
+1530792020445	Rename Java project 'dubboConsume'
+1530861799511	Delete resource 'maven-02'
+1530865156033	Delete resource 'maven-02/src/test/java/com/wkcto/maven/AppTest.java'
+1530865922401	Delete resource 'maven-03/src/main/java/com/wkcto/maven/App.java'
+1530865930164	Delete resource 'maven-03/src/test/java/com/wkcto/maven/AppTest.java'

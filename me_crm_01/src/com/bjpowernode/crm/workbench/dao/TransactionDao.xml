@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.TransactionDao">
+
+	<select id="getAll" resultType="Transaction">
+		select * from tbl_transaction  
+	</select>
+
+	<update id="update2" parameterType="Transaction">
+		update tbl_transaction set
+		owner=#{owner},money=#{money},name=#{name},expectedTime=#{expectedTime},
+		customerId=#{customerId},stage=#{stage},source=#{source},activityId=#{activityId},
+			contactsId=#{contactsId},description=#{description},contactSummary=#{contactSummary},
+			relationTimeNext=#{relationTimeNext},editTime=#{editTime},creatbY=#{editBy}
+		where
+		 id=#{id}
+	</update>
+	
+	<delete id="deletes" >
+		delete from tbl_transaction where id in (
+			<foreach collection="array" item="id" separator=",">
+				#{id}
+			</foreach>
+		)
+		
+	</delete>
+
+	<delete id="delete">
+		delete from tbl_transaction where id= #{id}
+	</delete>
+
+	<insert id="save1" parameterType="Transaction">
+		insert into tbl_transaction
+			(id,owner,money,name,expectedTime,customerId,stage,source,activityId,
+			contactsId,description,contactSummary,relationTimeNext,creatTime,creatBy)
+		values
+		(#{id},#{owner},#{money},#{name},#{expectedTime},#{customerId},#{stage},#{source},#{activityId},
+		#{contactsId},#{description},#{contactSummary},#{relationTimeNext},#{creatTime},#{creatBy})
+	</insert>
+	
+	<select id="getActivityByName" resultType="Activity">
+		select a.id, a.name, a.startTime, a.endTime, u.name as owner
+		from tbl_activity a
+		join tbl_user u
+		on a.owner = u.id
+		where a.name like "%" #{name} "%"
+	</select>
+	
+	<select id="getList" parameterType="map" resultType="Transaction">
+		select t.id,t.name,cus.name as customerId,t.stage,t.type,u.name as owner,t.source,con.name as contactsId
+		from
+			tbl_transaction t
+		left join 
+			tbl_customer cus
+		on 
+			cus.id = t.customerId
+		left join 
+			tbl_contacts con
+		on
+			con.id = t.contactsId
+		join 
+			tbl_user u
+		on 
+			t.owner = u.id
+		<where>
+			<if test="name != null and name != ''">
+				and t.name like '%' #{name} '%'
+			</if>
+			<if test="owner != null and owner != ''">
+				and u.name like '%' #{owner} '%'
+			</if>
+			<if test="customerName != null and customerName != ''">
+				and cus.name like '%' #{customerName} '%'
+			</if>
+			<if test="stage != null and stage != ''">
+				and t.stage like '%' #{stage} '%'
+			</if>
+			<if test="type != null and type != ''">
+				and t.type like '%' #{type} '%'
+			</if>
+			<if test="source != null and source != ''">
+				and t.source like '%' #{source} '%'
+			</if>
+			<if test="contactsName != null and contactsName != ''">
+				and con.name like '%' #{contactsName} '%'
+			</if>
+		</where>
+		order by
+			t.name
+		limit 
+			#{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getCount" resultType="long" parameterType="map">
+		select count(*) 
+		from
+			tbl_transaction t
+		left join 
+			tbl_customer cus
+		on 
+			cus.id = t.customerId
+		left join 
+			tbl_contacts con
+		on
+			con.id = t.contactsId
+		join 
+			tbl_user u
+		on 
+			t.owner = u.id
+		<where>
+			<if test="name != null and name != ''">
+				and t.name like '%' #{name} '%'
+			</if>
+			<if test="owner != null and owner != ''">
+				and u.name like '%' #{owner} '%'
+			</if>
+			<if test="customerName != null and customerName != ''">
+				and cus.name like '%' #{customerName} '%'
+			</if>
+			<if test="stage != null and stage != ''">
+				and t.stage like '%' #{stage} '%'
+			</if>
+			<if test="type != null and type != ''">
+				and t.type like '%' #{type} '%'
+			</if>
+			<if test="source != null and source != ''">
+				and t.source like '%' #{source} '%'
+			</if>
+			<if test="contactsName != null and contactsName != ''">
+				and con.name like '%' #{contactsName} '%'
+			</if>
+		</where>
+	</select>
+	
+	<select id="getById" resultType="Transaction">
+		select t.id,u.name as owner,t.money,t.name,t.expectedTime,cus.name as customerId,t.stage,
+		t.type,t.source,a.name as activityId,con.name as contactsId,t.description,t.contactSummary,
+		t.relationTimeNext,t.creatTime,t.creatBy,t.editTime,t.editBy 
+		from 
+			tbl_transaction t 
+		join
+			tbl_user u
+		on
+			u.id = t.owner
+		left join 
+			tbl_customer cus
+		on
+			cus.id = t.customerId
+		left join 
+			tbl_activity a
+		on
+			a.id = t.activityId
+		left join
+			tbl_contacts con
+		on
+			con.id = t.contactsId
+		where t.id = #{id}
+	</select>
+	
+	<update id="update" parameterType="Transaction">
+		update tbl_transaction set
+			stage = #{stage}, editBy = #{editBy}, editTime = #{editTime}
+		where
+			id = #{id} 
+	</update>
+	
+	<select id="getTransactionBycustomerId" resultType="Transaction">
+		select * from tbl_transaction
+		where customerId = #{customerId}
+	</select>
+	
+	<select id="getCountByStage" resultType="map">
+		select stage as name ,count(*) as value
+		from 
+			tbl_transaction
+		group by
+			stage
+		order by
+			stage 
+	</select>
+	<select id="getByContactsId" resultType="Transaction">
+	select  *
+	from 
+		tbl_transaction 
+	where 
+		contactsId = #{contactsId}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

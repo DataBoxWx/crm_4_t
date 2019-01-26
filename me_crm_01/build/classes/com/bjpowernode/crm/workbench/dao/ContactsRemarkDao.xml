@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ContactsRemarkDao">
+	<insert id="saves" parameterType="ContactsRemark">
+		insert into tbl_contacts_remark
+			(id,noteContent,creatBy,creatTime,editBy,editTime,editFlag,contactId)
+		values
+		<foreach collection="list" item="o" separator=",">
+			(#{o.id},#{o.noteContent},#{o.creatBy},#{o.creatTime},#{o.editBy},#{o.editTime},#{o.editFlag},#{o.contactId})
+		</foreach>
+	</insert>
+	
+	<select id="displayRemark" resultType="ContactsRemark">
+		select *
+		from 
+			tbl_contacts_remark
+		where
+			contactId = #{contactId}
+	</select>
+	
+	<insert id="saveRemark" parameterType="ContactsRemark">
+		insert into tbl_contacts_remark
+			(id,noteContent,creatBy,creatTime,editFlag,contactId)
+		values
+			(#{id},#{noteContent},#{creatBy},#{creatTime},#{editFlag},#{contactId})
+	</insert>
+	
+	<update id="update" parameterType="ContactsRemark">
+		update tbl_contacts_remark set
+			noteContent = #{noteContent}, editFlag = #{editFlag}, editBy = #{editBy}, editTime = #{editTime}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_contacts_remark
+		where id = #{id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

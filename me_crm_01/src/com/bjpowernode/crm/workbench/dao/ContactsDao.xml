@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ContactsDao">
+
+	<delete id="delete2">
+		delete from tbl_contacts where id = #{id}
+	</delete>
+
+	<insert id="saveContacts" parameterType="Contacts">
+		insert into tbl_contacts
+			(id,owner,source,name,appellation,position,phone,birthday,email,customerId,description,contactSummary,
+			relationTimeNext,address,creatTime,creatBy,editBy,editTime)
+		values
+			(#{id},#{owner},#{source},#{name},#{appellation},#{position},#{phone},#{birthday},#{email},#{customerId},
+			#{description},#{contactSummary},#{relationTimeNext},#{address},#{creatTime},#{creatBy},#{editBy},#{editTime})
+	</insert>
+	
+	<select id="getContactsByName" resultType="Contacts">
+		select id, name, email, phone
+		from tbl_contacts
+		where name like "%" #{name} "%"
+	</select>
+	
+	<select id="getContactsByCustomerId" resultType="Contacts">
+		select * from tbl_contacts where customerId = #{customerId}
+	</select>
+	
+	<select id="getTotal" parameterType="map" resultType="long">
+		select count(*) 
+		from 
+			tbl_contacts con
+		left join
+			tbl_customer cus
+		on 
+			con.customerId = cus.id
+		join
+			tbl_user u
+		on 
+			u.id = con.owner
+		<where>
+			<if test="owner != null and owner != ''">
+				and u.name like '%' #{owner} '%'
+			</if>
+			<if test="name != null and name != ''">
+				and con.name like '%' #{name} '%'
+			</if>
+			<if test="customerName != null and customerName != ''">
+				and cus.name like '%' #{customerName} '%'
+			</if>
+			<if test="source != null and source != ''">
+				and con.source like '%' #{source} '%'
+			</if>
+			<if test="birthday != null and birthday != ''">
+				and con.birthday like '%' #{birthday} '%'
+			</if>
+		</where>
+	</select>
+	
+	<select id="getAll" parameterType="map" resultType="Contacts">
+		select con.id,con.name,cus.name as customerId,u.name as owner ,con.source,con.birthday
+			from 
+				tbl_contacts con
+			left join
+				tbl_customer cus
+			on 
+				con.customerId = cus.id
+			join
+				tbl_user u
+			on 
+				u.id = con.owner
+			<where>
+				<if test="owner != null and owner != ''">
+					and u.name like '%' #{owner} '%'
+				</if>
+				<if test="name != null and name != ''">
+					and con.name like '%' #{name} '%'
+				</if>
+				<if test="customerName != null and customerName != ''">
+					and cus.name like '%' #{customerName} '%'
+				</if>
+				<if test="source != null and source != ''">
+					and con.source like '%' #{source} '%'
+				</if>
+				<if test="birthday != null and birthday != ''">
+					and con.birthday like '%' #{birthday} '%'
+				</if>
+			</where>
+			order by con.name asc
+			limit #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getById" resultType="Contacts">
+		select con.id,con.owner,con.source,con.name,con.appellation,con.position,con.phone,con.birthday,con.email,
+			cus.name as customerId,con.description,con.contactSummary,con.relationTimeNext,con.address
+		
+		from 
+			tbl_contacts con
+		left join 
+			tbl_customer cus
+		on
+			con.customerId = cus.id
+		where
+			con.id = #{id}
+	</select>
+	
+	<update id="update" parameterType="Contacts">
+		update tbl_contacts set
+			owner=#{owner},source=#{source},name=#{name},appellation=#{appellation},position=#{position},phone=#{phone},
+			birthday=#{birthday},email=#{email},customerId=#{customerId},description=#{description},contactSummary=#{contactSummary},
+			relationTimeNext=#{relationTimeNext},address=#{address},editBy=#{editBy},editTime=#{editTime}
+		where id=#{id}
+	</update>
+	
+	<select id="getAll2" resultType="Contacts">
+		select * from tbl_contacts
+	</select>
+	
+	<delete id="delete">
+		delete from tbl_contacts where id in (
+			<foreach collection="array" item="id" separator=",">
+			#{id}
+			</foreach>
+			)
+	</delete>
+	
+	<insert id="saves" parameterType="Contacts">
+		insert into 
+			tbl_contacts
+		values
+			<foreach collection="list" item="c" separator=",">
+			(#{c.id},#{c.owner},#{c.source},#{c.name},#{c.appellation},#{c.position},#{c.phone},#{c.birthday},
+			#{c.email},#{c.customerId},#{c.description},#{c.contactSummary},#{c.relationTimeNext},#{c.address},
+			#{c.creatTime},#{c.creatBy},#{c.editBy},#{c.editTime})
+			</foreach>
+	</insert>
+	
+	<select id="getById2" resultType="Contacts">
+		select con.id,u.name as owner,con.source,con.name,con.appellation,con.position,con.phone,con.birthday,con.email,
+			cus.name as customerId,con.description,con.contactSummary,con.relationTimeNext,con.address,con.creatBy,
+			con.creatTime,con.editTime,con.editBy
+		from 
+			tbl_contacts con
+		left join 
+			tbl_customer cus
+		on
+			con.customerId = cus.id
+		join 
+			tbl_user u
+		on
+			u.id = con.owner
+		where
+			con.id = #{id}
+	</select>
+	
+	<select id="getActivityByContactsId" resultType="Activity">
+		select a.id,a.name,a.startTime,a.endTime,u.name as owner
+		from 
+			tbl_activity a
+		join
+			tbl_contacts_activity_relation car
+		on
+			car.ActivityId = a.id
+		join
+			tbl_user u
+		on 
+			u.id = a.owner
+		where 
+			car.contactsId = #{activity}
+	</select>
+	
+	<select id="getActivityById" resultType="Activity">
+		select a.id,a.name,a.startTime,a.endTime,u.name as owner
+		from 
+			tbl_activity a
+		join
+			tbl_user u
+		on 
+			u.id = a.owner
+		where 
+			(a.name like '%' #{arg1} '%'
+		or
+			a.namePingYin like '%' #{arg2} '%')
+		and
+			a.id not in(select ActivityId from tbl_contacts_activity_relation where contactsId = #{arg0})
+			
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

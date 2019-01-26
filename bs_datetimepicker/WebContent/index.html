@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<base href="http://localhost:8080/bs_datetimepicker/"/>
+		<title>bootstrap datetimepicker</title>
+		<meta charset="UTF-8">
+		
+		<!-- jQuery -->
+		<script type="text/javascript" src="jquery/jquery-1.11.1-min.js"></script>
+		
+		<!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		
+		<!-- bootstrap datetimepicker -->
+		<link rel="stylesheet" type="text/css" href="bootstrap_datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+		<script type="text/javascript" src="bootstrap_datetimepicker/js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="bootstrap_datetimepicker/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				
+				$('.date').datetimepicker({
+				 language: 'zh-CN',//显示中文
+				 format: 'yyyy-mm-dd',//显示格式
+				 //format : 'yyyy-mm-dd hh:ii:ss',//显示格式
+				 minView: "month",//设置只显示到月份
+				 initialDate: new Date(),//初始化当前日期
+				 autoclose: true,//选中自动关闭
+				 todayBtn: true,//显示今日按钮
+				 clearBtn : true
+				})
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" class="date">
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

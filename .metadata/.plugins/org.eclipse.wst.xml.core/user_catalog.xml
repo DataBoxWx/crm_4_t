@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <public publicId="-//mybatis.org//DTD Config 3.0//EN" uri="file:///E:/就业班（第四阶段）/12-MyBatis/mybatis-3-config.dtd"/>
+  <public publicId="-//mybatis.org//DTD Mapper 3.0//EN" uri="file:///E:/就业班（第四阶段）/12-MyBatis/mybatis-3-mapper.dtd"/>
+  <system systemId="http://code.alibabatech.com/schema/dubbo/dubbo.xsd" uri="file:///E:/就业班%20%20(第五阶段)/19-Dubbo/document/dubbo.xsd"/>
+  <system systemId="http://www.springframework.org/schema/beans/spring-beans.xsd" uri="file:///E:/就业班%20%20(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/schema/beans/spring-beans-4.3.xsd"/>
+  <uri name="http://www.springframework.org/schema/aop/spring-aop.xsd" uri="file:///E:/就业班%20%20(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/schema/aop/spring-aop-4.3.xsd"/>
+  <system systemId="http://www.springframework.org/schema/context/spring-context.xsd" uri="file:///E:/就业班%20%20(第五阶段)/15-Spring4/document/spring-framework-4.3.9.RELEASE/schema/context/spring-context-4.3.xsd"/>
+</catalog>

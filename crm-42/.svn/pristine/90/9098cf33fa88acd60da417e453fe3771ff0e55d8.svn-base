@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.settings.dao.DeptDao">
+
+	<update id="update" parameterType="Dept">
+		update tbl_dept set
+			name = #{name},
+			manager = #{manager},
+			phone = #{phone},
+			description = #{description}
+		where
+			code = #{code}
+	</update>
+
+	<select id="getByCode" resultType="Dept">
+		select * from tbl_dept where code = #{code}
+	</select>
+
+	<insert id="save" parameterType="Dept">
+		insert into tbl_dept
+			(code,name,manager,phone,description)
+		values
+			(#{code},#{name},#{manager},#{phone},#{description})
+	</insert>
+	
+	<select id="getAll" resultType="Dept">
+		select * from tbl_dept
+	</select>
+	
+	<delete id="deleteByCode">
+		delete from tbl_dept where code in
+		<foreach collection="array" item="code" open="(" close=")" separator=",">
+		#{code}
+		</foreach>
+	</delete>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

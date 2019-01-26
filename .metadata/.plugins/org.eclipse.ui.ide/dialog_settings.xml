@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="581" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="498" key="DIALOG_HEIGHT"/>
+		<item value="670" key="DIALOG_X_ORIGIN"/>
+		<item value="183" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\就业班  (第五阶段)\project\Dubbo"/>
+			<item value="E:\就业班  (第五阶段)\project\RedisDemo"/>
+			<item value="E:\就业班(第五阶段)\project\springmvc"/>
+			<item value="E:\就业班(第五阶段)\project\springmvc\25-SSM"/>
+			<item value="E:\就业班(第五阶段)\project"/>
+			<item value="E:\就业班(第五阶段)\project\16-spring-web2"/>
+			<item value="E:\就业班(第五阶段)\project\15-spring-web"/>
+			<item value="E:\就业班(第五阶段)\project\14-spring-mybatis-dbcp"/>
+			<item value="E:\就业班(第五阶段)\project\13-spring-mybatis-druid"/>
+			<item value="E:\就业班(第五阶段)\project\12-aop-homework"/>
+			<item value="E:\就业班(第五阶段)\project\11-aop-apsectj"/>
+			<item value="E:\就业班(第五阶段)\project\10-aop-leadin-jdk"/>
+			<item value="E:\就业班(第五阶段)\project\09-aop-leandin"/>
+			<item value="E:\就业班(第五阶段)\project\08-cglib-proxy"/>
+			<item value="E:\就业班(第五阶段)\project\07-jdk-proxy"/>
+			<item value="E:\就业班(第五阶段)\project\06-di-annotation"/>
+			<item value="E:\就业班(第五阶段)\project\05-homework"/>
+			<item value="E:\就业班(第五阶段)\project\04-di-xml"/>
+			<item value="E:\就业班(第五阶段)\project\03-beanAssemble"/>
+			<item value="E:\就业班(第五阶段)\project\02-primary"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1526127920987" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+</section>

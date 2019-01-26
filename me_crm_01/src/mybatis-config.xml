@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties resource="jdbc.properties" />
+	<typeAliases>
+		<package name="com.bjpowernode.crm.domain"/>
+		<package name="com.bjpowernode.crm.workbench.domain"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!-- <mapper resource="com/bjpowernode/crm/dao/DictionaryDao.xml"/> -->
+		<package name="com.bjpowernode.crm.dao"/>
+		<package name="com.bjpowernode.crm.workbench.dao"/>
+	</mappers>
+</configuration>

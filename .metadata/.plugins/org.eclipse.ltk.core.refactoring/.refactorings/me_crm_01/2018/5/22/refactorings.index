@@ -1,0 +1,47 @@
+1527424093167	Extract local variable 'id'
+1527469781551	Extract local variable 'noteContnt'
+1527470590082	Copy file
+1527470730181	Rename type 'clueRemarkService'
+1527471048194	Extract local variable 'parameter'
+1527473839394	Extract local variable 'clueId'
+1527474286142	Copy file
+1527474367435	Rename type 'ClueRemarkRelationServiceImpl'
+1527474437246	Rename type 'ClueRemarkRelationServiceDao'
+1527474454744	Rename resource 'ClueRemarkRelationDao.xml'
+1527475332314	Rename type 'ClueActivityRelationServiceDao'
+1527497982211	Extract local variable 'id'
+1527506473014	Extract local variable 'clueId'
+1527509606593	Extract local variable 'name'
+1527511577397	Extract local variable 'clueId'
+1527511592445	Extract local variable 'activityId'
+1527514814343	Extract local variable 'parameter'
+1527557972889	Extract local variable 'id'
+1527582053167	Extract local variable 'ids'
+1527598204147	Extract local variable 'id'
+1527598225086	Extract local variable 'noteContent'
+1527599874262	Extract local variable 'id'
+1527646509205	Extract local variable 'id'
+1527651100580	Rename compilation unit 'customer.java'
+1527651341504	Copy file
+1527662022940	Copy file
+1527662707285	Extract local variable 'allByClueId'
+1527663413062	Copy file
+1527664053786	Extract local variable 'displayRemark'
+1527664901265	Copy file
+1527665354524	Copy file
+1527683874771	Extract local variable 'flg'
+1527684020622	Extract local variable 'money'
+1527685841039	Copy file
+1527686541778	Copy file
+1527729407074	Extract local variable 'keys'
+1527729535875	Extract local variable 'string'
+1527732642079	Rename resource 'resource.properties'
+1527736623646	Extract local variable 'path'
+1527737187142	Rename type 'CustmoerController'
+1527737632488	Delete element
+1527758249423	Extract local variable 'pageNo'
+1527769199765	Extract local variable 'id'
+1527772409260	Extract local variable 'ids'
+1527774114357	Extract local variable 'id'
+1527774149802	Extract local variable 'byId'
+1527778075864	Extract local variable 'customerId'

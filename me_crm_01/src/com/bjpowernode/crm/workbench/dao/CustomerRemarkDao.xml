@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.CustomerRemarkDao">
+
+	<delete id="delete">
+		delete from tbl_customer_remark where id = #{id}
+	</delete>
+	
+	<update id="update" parameterType="CustomerRemark">
+		update tbl_customer_remark set
+		noteContent = #{noteContent},editBy = #{editBy},editTime = #{editTime},editFlag = #{editFlag}
+		where id = #{id}
+	</update>
+
+	<insert id="saves" parameterType="CustomerRemark">
+		insert into tbl_customer_remark
+		(id,noteContent,editFlag,creatBy,creatTime,editBy,editTime,customerId)
+			values
+		<foreach collection="list" item="o" separator=",">
+			(#{o.id},#{o.noteContent},#{o.editFlag},#{o.creatBy},#{o.creatTime},#{o.editBy},#{o.editTime},#{o.customerId})
+		</foreach>
+	</insert>
+	
+	<select id="getCustomerRemarkByCustomerId1" resultType="CustomerRemark">
+		select r.id , r.noteContent,con.name , con.appellation ,cus.name as company ,r.creatBy ,r.creatTime ,r.editTime ,r.editBy ,r.editFlag ,r.customerId
+		from 
+			tbl_customer_remark r
+		left join 
+			tbl_contacts con
+		on
+			con.customerId = r.customerId
+		left join 
+			tbl_customer cus
+		on 
+			cus.id = r.customerId
+		where r.customerId = #{customerId} 
+	</select>
+	
+	<insert id="save" parameterType="CustomerRemark">
+		insert into tbl_customer_remark
+			(id,noteContent,editFlag,creatBy,creatTime,customerId)
+		values
+			(#{id},#{noteContent},#{editFlag},#{creatBy},#{creatTime},#{customerId})
+	</insert>
+	
+	<select id="getCustomerRemarkByCustomerId2" resultType="CustomerRemark">
+	select r.id , r.noteContent,con.name , con.appellation ,cus.name as company ,r.creatBy ,r.creatTime ,r.editTime ,r.editBy ,r.editFlag ,r.customerId
+		from 
+			tbl_customer_remark r
+		left join 
+			tbl_contacts con
+		on
+			con.customerId = #{arg1}
+		left join 
+			tbl_customer cus
+		on 
+			cus.id = #{arg1}
+		where 
+			r.Id = #{arg0}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+1526796376059	Rename resource 'index.html'
+1526801384452	Extract local variable 'path'
+1526801523511	Delete element
+1526801627302	Extract local variable 'loginAct'
+1526801641109	Extract local variable 'loginPwd'
+1526802248580	Extract local variable 'remoteAddr'
+1526805901398	Extract local variable 'path'
+1526806114466	Extract local variable 'session'
+1526807033355	Extract local variable 'tenDaysFree'
+1526807424300	Delete element
+1526807544001	Extract local variable 'cookies'
+1526809135884	Extract local variable 'login'
+1526811408716	Delete element
+1526811473981	Rename resource 'index.html'
+1526815384226	Rename resource 'index.html'
+1526815391357	Rename resource 'detail.html'
+1526870883302	Extract local variable 'path'
+1526871019456	Copy file
+1526902538900	Move compilation unit
+1526902578203	Move compilation unit
+1526902609436	Move compilation unit
+1526902678041	Move elements
+1526912661644	Extract local variable 'id'
+1526991659681	Extract local variable 'ids'
+1526992984682	Extract local variable 'id'
+1526993158272	Copy file
+1527040422967	Extract local variable 'id'
+1527044767535	Copy compilation unit
+1527044850725	Extract local variable 'noteContent'
+1527044872213	Extract local variable 'AictivityId'
+1527059976883	Delete element
+1527066076428	Extract local variable 'id'
+1527066093590	Extract local variable 'owner'
+1527132283257	Extract local variable 'id'
+1527167110553	Extract local variable 'id'
+1527167133272	Extract local variable 'noteContent'
+1527170044728	Extract local variable 'export'
+1527170997420	Extract local variable 'parameterValues'
+1527296951495	Rename resource 'convert.html'
+1527296957902	Rename resource 'detail.html'
+1527296964247	Rename resource 'index.html'
+1527296971701	Rename resource 'detail.html'
+1527296978873	Rename resource 'index.html'
+1527296985609	Rename resource 'detail.html'
+1527296992922	Rename resource 'index.html'
+1527296999735	Rename resource 'index.html'
+1527297005033	Rename resource 'detail.html'
+1527297010814	Rename resource 'edit.html'
+1527297016424	Rename resource 'index.html'
+1527297023534	Rename resource 'save.html'
+1527297029535	Rename resource 'detail.html'
+1527297033723	Rename resource 'editTask.html'
+1527297037833	Rename resource 'index.html'
+1527297042958	Rename resource 'saveTask.html'
+1527299149552	Extract local variable 'path'
+1527299848587	Copy file
+1527326721528	Extract local variable 'keySet'
+1527339640518	Delete element
+1527340115114	Extract local variable 'name'

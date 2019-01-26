@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ClueActivityRelationDao">
+	
+	<delete id="deleteById">
+		delete from tbl_clue_activity_relation where id = #{id}	
+	</delete>
+	
+	<select id="getActivityByClueId" resultType="Activity">
+		select 
+			a.name , a.startDate, a.endDate, u.name as owner, car.id
+		from
+			tbl_activity a
+		join
+			tbl_clue_activity_relation car
+		on
+			car.activityId = a.id
+		join
+			tbl_user u
+		on
+			a.owner = u.id
+		where
+			car.clueId = #{clueId}
+	</select>
+	
+</mapper>

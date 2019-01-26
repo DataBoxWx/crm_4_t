@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1529629289493_4" label="fiveStage" name="fiveStage">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/15-spring-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03-beanAssemble" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/10-aop-leadin-jdk" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/13-spring-mybatis-druid" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01-miniSpring" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-web-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02-primary" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/14-spring-mybatis-dbcp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-aop-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/08-cglib-proxy" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/05-homework" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/04-di-xml" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1530002437097_4" label="forStage" name="forStage">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/jackson" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bs_typeahead" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-11" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-22" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-26" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/itcast0907crmCache" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JFreeChart-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/PersonManage" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/pushlets" type="4"/>
+<item elementID="=me_crm_01" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-27" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-30" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-34" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-41" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/httpclient" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/apache-poi-import" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/emailTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RemoteSystemsTempFiles" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/apache-poi-export" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-02" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-28" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-31" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-39" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-42" type="4"/>
+<item elementID="=bs3_pagination" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/apache-commons-fileupload" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/md5" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/setutil" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/read_properties" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bs_datetimepicker" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-03" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-07" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-14" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-18" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/crm-29" type="4"/>
+<item elementID="=crm-43" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/echarts" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/junit-test" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JFreeChart" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1530002555238_5" label="fiveStage-springmvc" name="fiveStage-springmvc">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ssm-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springMvc-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/07-requestMapping-method" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RedisDemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/18-redirect" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/05-primary-annotation" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/11-receiveParameters-object" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/13-returnVoid-ajax" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Redis-jedis-01" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/12-returnString-viewName" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/10-receiveParameters-requestparam" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/04-url-pattern-2" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/09-receiveParameters-property" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/06-requestMapping-modelName" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/springMvc-02" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/08-requestMapping-params" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/17-dispather" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/15-returnObject-Student" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01-primary" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03-url-pattern-1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/16-returnObject-List" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02-url-pattern" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/14-returnObject-String" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1530781821040_5" label="fiveStage-Dubbo" name="fiveStage-Dubbo">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/04-dubboConsumeService" type="4"/>
+<item elementID="=dubboInterface-01" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/05-dubboInterface" type="4"/>
+<item elementID="=dubboProvider-01" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/05-dubboProvider" type="4"/>
+<item elementID="=dubboConsume-01" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/06-dubboProviderZk" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02-providerService" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03-consumeService" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/06-dubboConsumeZk" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/04-dubboProviderService" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01-weatherService" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/05-dubboConsume" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1530861620304_6" label="sixStage" name="sixStage">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/maven-02" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/maven-03" type="4"/>
+<item elementID="=maven-04" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=test" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1526127920988_0" label="Window Working Set" name="Aggregate for window 1526127920987"/>
+</workingSetManager>

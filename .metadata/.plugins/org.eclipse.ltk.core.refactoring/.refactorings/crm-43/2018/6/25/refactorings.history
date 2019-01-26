@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DicTypeServiceImplTest.java&apos; to &apos;crm-43&apos;&#x0D;&#x0A;- Original project: &apos;crm-43&apos;&#x0D;&#x0A;- Destination element: &apos;crm-43&apos;&#x0D;&#x0A;- Original element: &apos;com.bjpowernode.crm.settings.service.impl.DicTypeServiceImplTest.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=crm-43" element1="/test&lt;com.bjpowernode.crm.settings.service.impl{DicTypeServiceImplTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1529629347485" units="1" version="1.0"/>
+</session>

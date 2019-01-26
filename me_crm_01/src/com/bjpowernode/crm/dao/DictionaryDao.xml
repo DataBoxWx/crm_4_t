@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.dao.DictionaryDao">
+	<select id="register" resultType="int" parameterType="String">
+		select count(*) from tbl_dic_type where code=#{code}
+	</select>
+	<insert id="save" parameterType="String">
+		insert into tbl_dic_type (code,name,discription)
+		values (#{arg0},#{arg1},#{arg2})
+	</insert>
+	<select id="list" resultType="DictionaryType">
+		select code,name,discription from tbl_dic_type
+	</select>
+	<select id="edit" parameterType="String" resultType="DictionaryType">
+		select code,name,discription from tbl_dic_type where code=#{code}
+	</select>
+	<update id="update" parameterType="String">
+		update tbl_dic_type set name=#{arg1},discription=#{arg2} where code=#{arg0}
+	</update>
+	<delete id="deletes">
+		delete from tbl_dic_type where code in
+			<foreach collection="array" item="id" open="(" close=")" separator=",">
+				#{id} 
+			</foreach>
+	</delete>
+	<select id="getAll" resultType="DictionaryType">
+		select code,name,discription from tbl_dic_type
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

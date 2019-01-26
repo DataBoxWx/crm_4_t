@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.dao.DeptDao">
+		<select id="getAll" resultType="Dept">
+			select code,name,manager,phone,description from tbl_dept_list
+		</select>
+		<select id="checkCode" resultType="int">
+			select count(*) from tbl_dept_list where code=#{arg0}
+		</select>
+		<insert id="save" parameterType="Dept">
+			insert into tbl_dept_list 
+				(code,name,manager,phone,description)
+			values
+				(#{code},#{name},#{manager},#{phone},#{description})
+		</insert>
+		<select id="edit" parameterType="int" resultType="Dept">
+		select code,name,manager,phone,description from tbl_dept_list where code=#{arg0}
+		</select>
+		<update id="update" parameterType="Dept">
+			update tbl_dept_list set
+				name=#{name},manager=#{manager},phone=#{phone},description=#{description}
+			where
+			code = #{code}
+		</update>
+		<delete id="delete">
+			delete from tbl_dept_list where code in
+			<foreach collection="array" item="code" open="(" close=")" separator=",">
+			#{code}
+			</foreach>
+		</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

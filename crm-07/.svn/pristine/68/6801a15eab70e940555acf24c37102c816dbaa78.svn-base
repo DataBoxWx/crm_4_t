@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>com.bjpowernode.crm.web.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>dicType</servlet-name>
+		<servlet-class>com.bjpowernode.crm.settings.web.controller.DicTypeController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dicType</servlet-name>
+		<url-pattern>/settings/dictionary/type/checkCode.do</url-pattern>
+		<url-pattern>/settings/dictionary/type/save.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>dicValue</servlet-name>
+		<servlet-class>com.bjpowernode.crm.settings.web.controller.DicValueController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dicValue</servlet-name>
+		<url-pattern>/settings/dictionary/value/create.do</url-pattern>
+		<url-pattern>/settings/dictionary/value/checkValue.do</url-pattern>
+		<url-pattern>/settings/dictionary/value/save.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 部门控制器 -->
+	<servlet>
+		<servlet-name>deptController</servlet-name>
+		<servlet-class>com.bjpowernode.crm.settings.web.controller.DeptController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deptController</servlet-name>
+		<url-pattern>/settings/dept/save.do</url-pattern>
+		<url-pattern>/settings/dept/getAll.do</url-pattern>
+		<url-pattern>/settings/dept/edit.do</url-pattern>
+		<url-pattern>/settings/dept/update.do</url-pattern>
+		<url-pattern>/settings/dept/delete.do</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

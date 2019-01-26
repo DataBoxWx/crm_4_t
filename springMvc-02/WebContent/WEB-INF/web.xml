@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>springMvc-02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>springmvc</servlet-name>
+  	<!-- spring-webmvc.jar -->
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	
+  	<!-- 自定义配置文件 -->
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>classpath:mvc.xml</param-value>
+  	</init-param>
+  	
+  	<!-- 在服务器启动的时候，创建Servlet对象 -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>springmvc</servlet-name>
+  	<!-- 
+  	     设置 <url-pattern> 把请求交给中央调度器， 交给中央调度器的请求才是经过springmvc框架处理的。
+  	   url-pattern的设置：
+  	   1.扩展名： *.xxx , xxx就是自定义的扩展名， 例如 *.do , *.action , *.mvc, *.htm , *.json , 不能使用 *.jsp
+  	       http://localhost:8080/myweb/some.do
+  	       http://localhost:8080/myweb/admin/admin.do
+  	       
+  	   2.使用斜杠 "/"
+   -->
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

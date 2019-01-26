@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.TransactionRemarkDao">
+	<insert id="save1" parameterType="TransactionRemark">
+		insert into tbl_transaction_remark
+			(id,noteContent,creatBy,creatTime,editBy,editTime,editFlag,transactionId)
+		values
+		<foreach collection="list" item="o" separator=",">
+			(#{o.id},#{o.noteContent},#{o.creatBy},#{o.creatTime},#{o.editBy},#{o.editTime},#{o.editFlag},#{o.transactionId})
+		
+		</foreach>
+	</insert>
+	
+	<insert id="save" parameterType="TransactionRemark">
+		insert into tbl_transaction_remark
+			(id,noteContent,creatBy,creatTime,editFlag,transactionId)
+		values
+			(#{id},#{noteContent},#{creatBy},#{creatTime},#{editFlag},#{transactionId})
+	</insert>
+	
+	<select id="displayRemark" resultType="TransactionRemark">
+		select * from tbl_transaction_remark
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

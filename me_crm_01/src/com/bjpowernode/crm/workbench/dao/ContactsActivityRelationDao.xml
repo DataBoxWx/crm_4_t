@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ContactsActivityRelationDao">
+	<insert id="saves" parameterType="ContactsActivityRelation">
+		insert into tbl_contacts_activity_relation 
+		(id,contactsId,ActivityId)
+			values
+		<foreach collection="list" item="w" separator=",">
+			(#{w.id},#{w.contactsId},#{w.ActivityId})	
+		</foreach>
+	</insert>
+	
+	<delete id="unband" >
+		delete from tbl_contacts_activity_relation
+		where
+			activityId = #{arg0}
+		and
+			contactsId = #{arg1}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

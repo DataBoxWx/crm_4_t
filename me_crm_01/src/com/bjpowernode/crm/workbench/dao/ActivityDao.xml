@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.workbench.dao.ActivityDao">
+
+	<select id="getByClueId" resultType="Activity">
+		select a.id,a.name,a.startTime,a.endTime,u.name as owner
+		from tbl_activity a
+		join tbl_user u
+		on a.owner = u.id
+		where 
+			(a.name like '%' #{arg0} '%' 
+		or
+			a.namePingYin like '%' #{arg0} '%')
+		and
+			a.id not in (select ActivityId from tbl_clue_activity_relation where clueId = #{arg1})
+	</select>
+	
+	<insert id="save" parameterType="Activity">
+		insert into tbl_activity 
+			(id,owner,name,namePingYin,startTime,endTime,cost,description,creatBy,creatTime,editBy,editTime)
+		values
+			(#{id},#{owner},#{name},#{namePingYin},#{startTime},#{endTime},#{cost},#{description},#{creatBy},#{creatTime},#{editBy},#{editTime})
+	</insert>
+	<select id="list" resultType="Activity" parameterType="map">
+		select  a.id,a.name,u.name as owner,a.startTime,a.endTime
+		from tbl_activity a
+		join tbl_user u on a.owner = u.id
+		<where>
+			<if test="name !=null and name != ''">
+				and a.name like '%' #{name} '%'
+			</if>
+			<if test="owner !=null and owner != ''">
+				and u.name like '%' #{owner} '%'
+			</if>
+			<if test="startTime !=null and startTime != ''">
+				and a.startTime &gt;= #{startTime} 
+			</if>
+			<if test="endTime !=null and endTime != ''">
+				and a.endTime &lt;= #{endTime}
+			</if>
+		</where>
+		order by startTime
+		limit #{startIndex},#{pageSize}
+	</select>
+	<select id="pageSum" resultType="int" parameterType="map">
+		select count(*)
+		from tbl_activity a
+		join tbl_user u on a.owner = u.id
+		<where>
+			<if test="name !=null and name != ''">
+				and a.name like '%' #{name} '%'
+			</if>
+			<if test="owner !=null and owner != ''">
+				and u.name like '%' #{owner} '%'
+			</if>
+			<if test="startTime !=null and startTime != ''">
+				and a.startTime &gt; #{startTime} 
+			</if>
+			<if test="endTime !=null and endTime != ''">
+				and a.endTime &lt; #{endTime} 
+			</if>
+		</where>
+	</select>
+	<select id="edit" resultType="Activity">
+		select id,owner,name,startTime,endTime,cost,description
+		from tbl_activity 
+		where id= #{arg0}
+	</select>
+	<update id="update" parameterType="Activity">
+		update tbl_activity set
+			owner=#{owner},name=#{name},startTime=#{startTime},endTime=#{endTime},cost=#{cost},description=#{description},editBy=#{editBy},editTime=#{editTime}
+		where id=#{id}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_activity where id in (
+			<foreach collection="array" separator="," item="id">
+				#{id}
+			</foreach>
+			)
+	</delete>
+	
+	<select id="getActivityById" resultType="Activity">
+		select 
+		a.id,u.name as owner,a.name,a.startTime,a.endTime,a.cost,a.description,a.creatBy,a.creatTime,a.editBy,a.editTime
+		from tbl_activity a
+		join tbl_user u
+		on a.owner = u.id
+		where a.id = #{arg0}
+	</select>
+	<delete id="deleteById">
+	delete from tbl_activity where id = #{arg0}
+	</delete>
+	
+	<select id="getAll" resultType="Activity">
+		select * from tbl_activity
+	</select>
+	
+	<select id="getActivityById2" resultType="Activity">
+		select * from tbl_activity where id in (
+		<foreach collection="array" separator="," item="id">
+			#{id}
+		</foreach>
+		)
+	</select>
+	
+	<insert id="saves" parameterType="Activity">
+		insert into  tbl_activity
+		(id,owner,name,startTime,endTime,cost,description,creatBy,creatTime,editBy,editTime)
+			values
+		<foreach collection="list" separator="," item="l">
+		(#{l.id},#{l.owner},#{l.name},#{l.startTime},#{l.endTime},#{l.cost},#{l.description},#{l.creatBy},#{l.creatTime},#{l.editBy},#{l.editTime})
+		</foreach>
+	</insert>
+	
+	<select id="getAll2" resultType="Activity">
+		select a.id,a.name,a.startTime,a.endTime,u.name as owner
+		from tbl_activity a
+		join tbl_user u
+		on a.owner = u.id
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

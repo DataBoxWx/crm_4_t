@@ -1,0 +1,39 @@
+1528031638849	Extract local variable 'path'
+1528077232318	Extract local variable 'ame'
+1528079105582	Rename resource 'index.html'
+1528079449500	Extract local variable 'path'
+1528080884469	Delete element
+1528080945671	Copy file
+1528082492002	Delete element
+1528111503347	Extract local variable 'id'
+1528114719975	Extract local variable 'parameterValues'
+1528116159250	Extract local variable 'di'
+1528121469720	Extract local variable 'contactsId'
+1528123105409	Extract local variable 'noteContent'
+1528123119964	Extract local variable 'parameter'
+1528160669841	Extract local variable 'id'
+1528160683374	Extract local variable 'noteContent'
+1528161970340	Extract local variable 'id'
+1528162581290	Extract local variable 'contactsId'
+1528163945608	Extract local variable 'contactsId'
+1528168410625	Extract local variable 'name'
+1528168441401	Extract local variable 'pingYin'
+1528182906584	Copy file
+1528182913877	Delete element
+1528183293404	Copy files
+1528184038243	Delete element
+1528184049663	Delete elements
+1528184061320	Delete element
+1528184143777	Delete element
+1528187785522	Extract local variable 'activityId'
+1528187810088	Extract local variable 'contactsId'
+1528188440005	Move compilation unit
+1528199241248	Extract local variable 'noteContent'
+1528199250601	Extract local variable 'id'
+1528200224553	Extract local variable 'id'
+1528201761167	Extract local variable 'parameter'
+1528203316286	Extract local variable 'id'
+1528206422912	Extract local variable 'id'
+1528207283210	Extract local variable 'doList'
+1528254007273	Extract local variable 'id'
+1528267491192	Extract local variable 'parameter'

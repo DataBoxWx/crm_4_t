@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.crm.dao.UserDao">
+		<select id="checkAct" resultType="int">
+			select count(*) from tbl_user where loginAct = #{loginAct}
+		</select>
+		<insert id="save" parameterType="User">
+		insert into tbl_user 
+			(id,loginAct,name,loginPwd,email,expireTime,lockState,deptCode,allowIp,creatTime,creatBy,editTime,editBy)
+		values
+			(#{id},#{loginAct},#{name},#{loginPwd},#{email},#{expireTime},#{lockState},#{deptCode},#{allowIp},#{creatTime},#{creatBy},#{editTime},#{editBy})
+		</insert>
+		<select id="list" resultType="User">
+			select id,loginAct,name,loginPwd,email,expireTime,lockState,deptCode,allowIp,creatTime,creatBy,editTime,editBy
+			from tbl_user
+		</select>
+		<delete id="delete">
+		delete from tbl_user where id in(
+		<foreach collection="array" separator="," item="id">
+			#{id}
+		</foreach>
+		)
+		</delete>
+		<select id="login" resultType="User">
+			select id,loginAct,name,loginPwd,email,expireTime,lockState,deptCode,allowIp,creatTime,creatBy,editTime,editBy
+			from tbl_user where
+			loginAct= #{arg0} and loginPwd = #{arg1}
+		</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

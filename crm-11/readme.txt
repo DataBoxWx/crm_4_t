@@ -1,0 +1,235 @@
+crm-01
+	1、配置eclipse关联Tomcat(JavaEE6/Servlet3.1)
+	2、配置工作区字符集：UTF-8
+	3、调整了一下字体。
+	4、将mysql的jar包，以及mybatis的jar包，还有log4j的jar包全部引入到项目当中。
+	5、引入相关的配置文件：
+		mybatis-config.xml
+		SqlMapper.xml
+		log4j.properties
+		jdbc.properties
+	6、引入相关的工具类
+		SqlSessionUtil
+		TransactionHandler
+		UUIDGenerator
+		DateUtil
+		Const
+	7、把CRM中的所有html全部拷贝到WebContent目录下。
+	
+crm-02
+	
+	1、数据字典表相关功能：
+		1.1、该模块的功能都是传统请求，没有ajax请求。
+		1.2、什么是数据字典表呢？有什么用？
+			整个系统当中有很多位置都是由下拉列表的，这些下拉列表的数据不能固定，
+			不能硬编码，不能写死到前端页面上，应该是可以在后台进行维护的，针对于
+			下拉列表当中的数据进行增删改查，这个过程称为数据字典表的维护。
+		1.3、数据字典表功能模块的表的设计：
+			* 工具：PowerDesigner（进行PDM设计【物理数据模型】）
+			* 需要几张表？什么关系？
+				机构类型：
+					一级部门 <option value="?">?</option>
+					二级部门
+					三级部门
+				性别：
+					男
+					女
+				等级：
+					高
+					中
+					低
+			* 两张表：
+				字典类型（机构类型、性别、等级）（一）
+				字典值（一级部门、二级部门、男、女、高、中、低、三级部门....）（多）
+			* 在多的那张表当中添加外键（FK），这个外键引用一的那一方的主键。
+			* 谈一谈外键的事儿？
+				在实际开发中一般为了程序的执行效率，不建议添加外键约束。
+				A表使用B表当中的某个字段，在A表当中检索数据的时候，由于使用了外键机制，数据库
+				会自动从B表当中也会检索数据，检索效率较低，影响用户体验，项目开发中有一种优化
+				策略：不添加外键约束。
+				
+				不添加外键约束怎么保证数据的完整性和有效性呢？
+					注意，可以在前端页面设计的时候，使用下拉列表的机制。
+		1.4、字典类型“创建”：
+			思路：
+				前端：
+					表单验证：
+						编码不能为空（前端验证）
+						编码不能含有中文，只能含有数字或者字母（前端验证）
+						编码不能重复（后台验证ajax）--> 这里的ajax验证需要使用ajax同步方式。{ async : false }
+					验证要求：
+						失去焦点验证
+						获得焦点的时候清空错误信息
+						错误信息要求红色字体，12px，显示到输入框的下方
+						最终用户点击保存按钮的时候，要求所有表单项必须全部合法才能提交请求。
+				后台：
+		
+		1.5、将字典类型模块的所有html修改为jsp，然后解决所有的404错误：
+		
+			* 在jsp中添加：
+				<%@page contentType="text/html;charset=UTF-8"%>
+				<base href="???"> base标签不属于JSP，属于HTML中的语法机制。
+				<base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath }/">
+				base标签只对当前页面中不以“/”开始的路径起作用。
+				
+			* 重命名：xxx.html修改为xxx.jsp
+			
+			* 解决所有404错误。
+			
+crm-03
+
+	1、添加一个过滤器（解决POST请求乱码）
+	
+	2、用户在字典值列表页面上点击“创建”，初始化创建页面：
+		字典类型编码位置有一个下拉列表需要从数据库中取数据。
+	
+	3、字典值的新增：
+		2.1、表单验证：
+			字典类型编码不能为空，必须选择一个
+			字典值不能为空
+			在同一个字典类型下，字典值具有唯一性
+			排序号可以为空，但不为空的时候，要求必须是正整数。
+			
+		2.2、保存字典值	
+					
+			
+crm-04
+	
+	1、部门维护：
+		* 设计数据库表：tbl_dept（PowerDesigner）
+		* 将部门维护相关的所有html修改为jsp，解决404错误。
+		* 创建部门：
+		
+			- modal窗口（模态窗口弹出之后，窗口点亮，窗口下面无法操作！）
+			我们这里使用的modal窗口是Bootstrap3 UI框架提供的。
+			modal窗口弹出：
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createDeptModal">
+					<span class="glyphicon glyphicon-plus"></span> 创建</button>
+			modal窗口关闭：
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			调用js代码隐藏modal：
+				$("#createDeptModal").modal("hide");
+			调用js代码显示modal：
+				$("#createDeptModal").modal("show");
+				
+			- 创建部门发送ajax请求：
+				/crm/settings/dept/save.do
+			
+crm-05
+	
+	1、发送ajax请求展示部门列表数据：
+		页面全部加载完毕之后单独发送ajax get请求查询部门的所有信息（这里不实现分页查询！）
+	
+	2、jackson组件的使用：
+		解析json字符串的组件。
+
+crm-06
+	
+	1、部门管理中的复选框全选和取消全选！
+		给后期动态生成的元素绑定事件必须使用jQuery的on函数：
+			$(父元素).on(事件,被绑定事件的元素对应的选择器,回调函数);
+			
+	2、编辑
+		* 保证一次只能修改一条记录
+		* 用户点击更新按钮更新数据。
+
+crm-07
+	
+	1、删除部门
+		* 至少选中一条数据
+		* 删除之前需要用户确认是否删除
+		* 发送ajax post请求删除：
+			/settings/dept/delete.do?code=xx&code=xx&code=xxx&code=xx.....
+			
+crm-08
+	
+	1、设计用户表：tbl_user（PowerDesigner）
+	
+	2、将用户维护相关的html修改为jsp，解决404错误。
+		
+	3、用户点击“创建”按钮，弹出新增用户的modal窗口：
+		- 用户点击创建按钮之后发送ajax get请求：/settings/dept/getAll.do
+	
+	4、给失效时间绑定一个日历插件：
+		* 日历插件很多，我们这里使用的是bootstrap3的datetimepicker插件。
+		* 可以先创建一个独立的项目，在该项目当中对datetimepicker插件进行学习，学会之后直接拷贝到CRM项目当中。
+
+	5、发送ajax post请求，保存用户信息。
+		密码采用密文：MD5加密之后再存储到数据库表当中。
+	
+crm-09
+	
+	1、json的输出交给专门的data.jsp完成。
+	
+crm-10
+
+	1、提供一个OutJson.java工具类，负责响应JSON。
+
+
+crm-11
+	
+	1、实现用户登录功能（先不实现十天内免登录）
+		- 登录页面login.html修改为login.jsp
+		- 登录页面打开之后，光标自动定位到“用户名”
+		- 用户点击登录按钮可以登录，并且用户直接回车也可以登录
+		- 登录的时候用户名和密码不能为空
+		- 登录发送ajax post请求（登录失败之后必须显示失败原因：要求失败信息显示时红色字体，12px）
+		- 登录成功直接跳转到工作台首页：workbench/index.jsp 【document.location.href="workbench/index.jsp"】
+		- 登录失败，显示错误信息：
+			$.post(
+				url , 
+				data ,
+				function(json){
+					//{"success" : true}
+					//{"success" : false , "errorMsg":"账户被锁定，请联系管理员"}
+				}
+			);
+		- 后台：
+			controller{
+				获取用户名和密码,获取客户端IP地址
+				调用service登录，登录之后返回“用户对象”
+				将用户对象绑定到session
+				响应json
+			}
+			
+			service{
+				先判断用户名和密码是否正确
+				再判断是否锁定
+				再判断是否失效
+				再判断IP地址是否受限
+				保证：出问题之后把错误信息返回。。。。
+			}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+			
+		
+		

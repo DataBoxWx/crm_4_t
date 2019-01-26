@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+   <!-- spring的配置文件 -->
+   
+   <!-- 加载属性配置文件 
+        location:指定属性配置文件的位置
+   -->
+   <context:property-placeholder location="classpath:jdbc.properties"/>
+   
+   <!-- 声明数据源DataSource -->
+   <bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+                          init-method="init" destroy-method="close">
+   	 <!-- 设置数据库的信息 
+   	           使用属性配置文件的中的数据， 语法  ${key}
+   	 -->
+   	 <property name="url" value="${jdbc.url}" /> <!-- setUrl() -->
+   	 <property name="username" value="${jdbc.username}" /> <!-- setUsername() -->
+   	 <property name="password" value="${jdbc.passwd}" /> <!-- setPassword() -->
+   </bean>
+   
+   <!-- 声明SqlSessionFactoryBean， 创建SqlSessionFactory -->
+   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+   		<!-- 指定DataSource -->
+   		<property name="dataSource" ref="myDataSource" />
+   		<!-- 指定MyBatis主配置文件 -->
+   		<property name="configLocation" value="classpath:mybatis.xml" />
+   </bean>
+   
+   <!-- 声明MyBatis的扫描器，创建Dao接口的实现类对象 -->
+   <!-- 
+       for( basePackage指定的接口 ： 接口 )  {
+                         根据sqlSessionFactory ， 获取到SqlSessionFactory对象
+                         根据SqlSessionFactory它的openSession得到SqlSession sqlSession
+                        
+                         接口类型的 Dao对象  dao = sqlSession.getMapper(接口.class);
+                          
+                         创建好的Dao对象放入Map之中  springMap.put(接口名的首字母小写,dao)               
+       }
+    -->
+   <bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+   		<!-- 指定SqlSessionFactory -->
+   		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+   		<!-- 指定Dao接口的包名 -->
+   		<property name="basePackage" value="com.bjpowernode.dao" />
+   </bean>
+   
+   
+   <!-- 声明Service对象 -->
+   <bean id="studentService" class="com.bjpowernode.service.impl.RegesterServiceImpl">
+   		<property name="regesterDao" ref="regesterDao" />
+   </bean>
+   
+</beans>

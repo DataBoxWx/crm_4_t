@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/dubbo-2.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/dubboInterface-01.jar"/>
+	<classpathentry kind="lib" path="lib/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/netty-3.2.5.Final.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aop-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-expression-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-jdbc-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-orm-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-tx-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-web-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-webmvc-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/zkclient-0.10.jar"/>
+	<classpathentry kind="lib" path="lib/zookeeper-3.4.10.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

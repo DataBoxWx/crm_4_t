@@ -1,0 +1,17 @@
+1527814799483	Extract local variable 'customerId'
+1527814947434	Extract local variable 'noteContent'
+1527819316014	Extract local variable 'name'
+1527821189538	Extract local variable 'path'
+1527821348131	Extract local variable 'name'
+1527821423673	Delete element
+1527823371475	Extract local variable 'name'
+1527824447868	Extract local variable 'userList'
+1527831593708	Extract local variable 'customer'
+1527853008716	Extract local variable 'name'
+1527856514569	Extract local variable 'attribute'
+1527856676975	Extract local variable 'object'
+1527859376169	Extract local variable 'parameter'
+1527859841538	Copy file
+1527867479313	Extract local variable 'transactionId'
+1527906506997	Extract local variable 'customerId'
+1527944880795	Extract local variable 'customerId'
